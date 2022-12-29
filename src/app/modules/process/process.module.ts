@@ -4,6 +4,9 @@ import { CommonModule } from '@angular/common';
 import { ProcessRoutingModule } from './process-routing.module';
 import { ProcessComponent } from './process.component';
 import { ProcessHeaderComponent } from './components/process-header/process-header.component';
+import {MatMenuModule} from "@angular/material/menu";
+import {MatButtonModule} from "@angular/material/button";
+import {MatIconModule} from "@angular/material/icon";
 
 
 @NgModule({
@@ -13,7 +16,10 @@ import { ProcessHeaderComponent } from './components/process-header/process-head
   ],
   imports: [
     CommonModule,
-    ProcessRoutingModule
+    ProcessRoutingModule,
+    MatMenuModule,
+    MatButtonModule,
+    MatIconModule
   ]
 })
 export class ProcessModule { }
