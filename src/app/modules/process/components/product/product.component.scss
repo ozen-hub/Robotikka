@@ -1,3 +1,60 @@
-.inner{
+
+.data-wrapper {
+  width: 100%;
+  height: 400px;
+  padding: 0 10px;
+}
+
+.img-wrapper {
+  width: 100%;
   height: 200px;
+  position: relative;
+  overflow: hidden;
+
+  .shadow {
+    transition: all 1s;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.shadow {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(52, 73, 94, 0.8);
+  position: absolute;
+  right: -100%;
+}
+
+.img-wrapper:hover {
+  .shadow {
+    animation-name: slide;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+  }
+}
+
+@keyframes slide {
+  0%{right: -100%;}
+  100%{left: 0;}
+}
+.data-set{
+  width: 100%;
+  height: 200px;
+  background-color: rgb(236, 240, 241);
+}
+.name{
+  margin: 0;
+}
+.desc{
+  font-size: 13px;
+  text-align: justify;
+  margin: -5 0;
+}
+.old-price{
+  color: #d35400;
 }

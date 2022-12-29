@@ -6,6 +6,8 @@
   align-items: center;
   justify-content: flex-end;
   padding: 0 13px;
+  position: fixed;
+  z-index: 5000;
 }
 .access-console-button{
   padding: 8px 20px;
