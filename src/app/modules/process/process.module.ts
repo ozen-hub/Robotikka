@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { ProcessRoutingModule } from './process-routing.module';
 import { ProcessComponent } from './process.component';
+import { ProcessHeaderComponent } from './components/process-header/process-header.component';
 
 
 @NgModule({
   declarations: [
-    ProcessComponent
+    ProcessComponent,
+    ProcessHeaderComponent
   ],
   imports: [
     CommonModule,
