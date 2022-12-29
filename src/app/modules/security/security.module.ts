@@ -8,13 +8,15 @@ import { SignupComponent } from './components/signup/signup.component';
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
+import { SecurityHeaderComponent } from './components/security-header/security-header.component';
 
 
 @NgModule({
   declarations: [
     SecurityComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    SecurityHeaderComponent
   ],
   imports: [
     CommonModule,
