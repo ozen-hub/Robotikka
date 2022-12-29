@@ -7,12 +7,16 @@ import { ProcessHeaderComponent } from './components/process-header/process-head
 import {MatMenuModule} from "@angular/material/menu";
 import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
+import { LandingPageComponent } from './components/landing-page/landing-page.component';
+import { ProductComponent } from './components/product/product.component';
 
 
 @NgModule({
   declarations: [
     ProcessComponent,
-    ProcessHeaderComponent
+    ProcessHeaderComponent,
+    LandingPageComponent,
+    ProductComponent
   ],
   imports: [
     CommonModule,
