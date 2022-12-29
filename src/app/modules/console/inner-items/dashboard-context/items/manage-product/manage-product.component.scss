@@ -1,0 +1,24 @@
+.btn-outer {
+  width: 100%;
+  height: 40px;
+  padding: 0 13px;
+  display: flex;
+  margin-top: 10px;
+
+  button {
+    border: none;
+    border-right: 1px solid var(--primary-color);
+    padding: 0 20px;
+  }
+  button:last-child{
+    border: none;
+  }
+}
+.active{
+  color: white;
+  background-color: var(--primary-color);
+}
+.head{
+  color: #d35400;
+  padding: 20px 13px;
+}
