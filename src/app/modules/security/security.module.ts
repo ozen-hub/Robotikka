@@ -9,6 +9,7 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
 import { SecurityHeaderComponent } from './components/security-header/security-header.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -18,12 +19,13 @@ import { SecurityHeaderComponent } from './components/security-header/security-h
     SignupComponent,
     SecurityHeaderComponent
   ],
-  imports: [
-    CommonModule,
-    SecurityRoutingModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule
-  ]
+    imports: [
+        CommonModule,
+        SecurityRoutingModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatButtonModule,
+        ReactiveFormsModule
+    ]
 })
 export class SecurityModule { }
