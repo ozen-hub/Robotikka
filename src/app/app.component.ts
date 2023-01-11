@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {LoadingService} from "./modules/share/services/loading/loading.service";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Robotikka';
+ constructor(public loadingService: LoadingService) {
+ }
+
 }

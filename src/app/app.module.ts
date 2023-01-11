@@ -6,6 +6,7 @@ import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {HttpManagerInterceptor} from "./modules/share/interceptor/http-manager.interceptor";
+import {ShareModule} from "./modules/share/share.module";
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import {HttpManagerInterceptor} from "./modules/share/interceptor/http-manager.i
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    ShareModule
   ],
   providers: [
     {
