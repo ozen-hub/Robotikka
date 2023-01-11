@@ -1,0 +1,9 @@
+<div class="main-outer">
+  <form action="" style="width: 400px" [formGroup]="verificationForm">
+    <mat-form-field style="width: 100%" appearance="outline">
+      <mat-label>Verification Code</mat-label>
+      <input formControlName="code" type="number" matInput>
+      <button type="button" [disabled]="verificationForm.invalid" mat-raised-button color="primary" (click)="verify()">Register Now</button>
+    </mat-form-field>
+  </form>
+</div>

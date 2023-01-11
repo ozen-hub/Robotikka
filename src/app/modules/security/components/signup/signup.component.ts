@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {UserService} from "../../../share/services/user/user.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-signup',
@@ -9,7 +10,7 @@ import {UserService} from "../../../share/services/user/user.service";
 })
 export class SignupComponent implements OnInit {
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private router: Router) { }
 
   registerForm= new FormGroup({
     firstName: new FormControl(null,[Validators.required]),
@@ -32,6 +33,8 @@ export class SignupComponent implements OnInit {
       this.registerForm.get('password')?.value!,
     ).subscribe(response=>{
       console.log(response);
+      alert('verify your account')
+      this.router.navigateByUrl('/security/verify/'+this.registerForm.get('email')?.value!).then();
     })
 
   }
