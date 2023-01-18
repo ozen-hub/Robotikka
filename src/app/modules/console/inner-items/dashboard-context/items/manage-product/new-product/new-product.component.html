@@ -1,5 +1,6 @@
 <div class="outer">
-  <form [formGroup]="form" class="example-form" (ngSubmit)="saveProduct()">
+  <form [formGroup]="form" class="example-form"
+        (ngSubmit)="saveProduct(formData)" #formData="ngForm">
     <div class="container">
       <div class="row">
         <div class="col-12 col-md-4">

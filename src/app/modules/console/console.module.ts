@@ -13,6 +13,7 @@ import {
   NewProductComponent
 } from "./inner-items/dashboard-context/items/manage-product/new-product/new-product.component";
 import {MatButtonModule} from "@angular/material/button";
+import { FindProductComponent } from './inner-items/dashboard-context/items/manage-product/find-product/find-product.component';
 
 
 
@@ -23,7 +24,8 @@ import {MatButtonModule} from "@angular/material/button";
     DashboardContextComponent,
     ManageProductComponent,
     MainConsoleHeaderComponent,
-    NewProductComponent
+    NewProductComponent,
+    FindProductComponent
   ],
   imports: [
     CommonModule,

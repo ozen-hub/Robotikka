@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {FormControl, FormGroup, FormGroupDirective, Validators} from "@angular/forms";
 import {ProductService} from "../../../../../../share/services/product/product.service";
 import ProductDTO from "../../../../../../share/dto/ProductDTO";
 import {SnackBarService} from "../../../../../../share/services/core/snack-bar.service";
@@ -25,7 +25,7 @@ export class NewProductComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  saveProduct() {
+  saveProduct(formData:FormGroupDirective) {
 
     let data = new ProductDTO(
       this.form.get('displayName')?.value!,
@@ -37,10 +37,15 @@ export class NewProductComponent implements OnInit {
     this.productService.createProduct(data).subscribe(response => {
       if (response.code === 201) {
         this.snackbarService.showSnackbar('Success!','Close');
+        this.refreshForm(formData);
       }
     }, error => {
       this.snackbarService.showSnackbar('Something went wrong','Close');
     })
+  }
+
+  private refreshForm(formData: FormGroupDirective) {
+    formData.resetForm();
   }
 
 }

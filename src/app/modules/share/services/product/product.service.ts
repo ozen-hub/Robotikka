@@ -19,4 +19,7 @@ export class ProductService {
       sellingPrice:product.sellingPrice,
     })
   }
+  public findProduct(id: string):Observable<any>{
+    return this.http.get('http://localhost:8000/api/v1/products/member/find/'+id);
+  }
 }
