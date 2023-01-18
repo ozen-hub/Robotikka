@@ -20,5 +20,14 @@ export class UserService {
       email: email,
       password: password,
     })
+
+
+  }
+  public verify(code: string, email: string): Observable<any> {
+    return this.http.post('http://localhost:8000/api/v1/users/visitor/verify/'+code+'?email='+email, {
+
+    })
+
+
   }
 }

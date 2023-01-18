@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
+import {UserService} from "../../../share/services/user/user.service";
 
 @Component({
   selector: 'app-verification',
@@ -9,7 +10,7 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class VerificationComponent implements OnInit {
 
-  constructor(private selectedRoute:ActivatedRoute) { }
+  constructor(private router:Router, private userService: UserService, private selectedRoute:ActivatedRoute) { }
   email='';
   verificationForm= new FormGroup({
     code: new FormControl('',[Validators.required])
@@ -23,6 +24,13 @@ export class VerificationComponent implements OnInit {
   verify() {
     if (!this.email){alert('please retry');return;}
 
-    // verify
+    let observable = this.userService.verify(
+      this.verificationForm.get('code')?.value!,
+      this.email
+    );
+    observable.subscribe(response=>{
+      alert('verification success!')
+      this.router.navigateByUrl('/security/login');
+    })
   }
 }
