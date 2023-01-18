@@ -5,6 +5,7 @@ import { ShareRoutingModule } from './share-routing.module';
 import { ShareComponent } from './share.component';
 import { LoadingPageComponent } from './components/loading-page/loading-page.component';
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import {MatSnackBarModule} from "@angular/material/snack-bar";
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
   imports: [
     CommonModule,
     ShareRoutingModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatSnackBarModule
   ]
 })
 export class ShareModule { }

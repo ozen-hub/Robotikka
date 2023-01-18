@@ -8,7 +8,7 @@ import { ManageProductComponent } from './inner-items/dashboard-context/items/ma
 import { MainConsoleHeaderComponent } from './components/main-console-header/main-console-header.component';
 import {MatInputModule} from "@angular/material/input";
 import {MatFormFieldModule} from "@angular/material/form-field";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {
   NewProductComponent
 } from "./inner-items/dashboard-context/items/manage-product/new-product/new-product.component";
@@ -31,6 +31,7 @@ import {MatButtonModule} from "@angular/material/button";
     MatInputModule,
     MatFormFieldModule,
     MatButtonModule,
+    ReactiveFormsModule
   ]
 })
 export class ConsoleModule { }
