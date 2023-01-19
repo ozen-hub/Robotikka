@@ -38,4 +38,8 @@ export class ProductService {
   deleteProduct(id: string): Observable<any> {
     return this.http.delete('http://localhost:8000/api/v1/products/member/remove/' + id);
   }
+
+  findAll(searchText: string, page: number, size: number):Observable<any> {
+    return this.http.get('http://localhost:8000/api/v1/products/member/list?searchText=' + searchText+'&page='+page+'&size='+size);
+  }
 }

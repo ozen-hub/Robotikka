@@ -10,12 +10,12 @@
   </tr>
   </thead>
   <tbody>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+  <tr *ngFor="let temp of data">
+    <td>{{temp?.propertyId}}</td>
+    <td>{{temp?.displayName}}</td>
+    <td>{{temp?.unitPrice}}</td>
+    <td>{{temp?.sellingPrice}}</td>
+    <td>{{temp?.qty}}</td>
   </tr>
   </tbody>
   <tfoot>
@@ -23,8 +23,9 @@
   </tfoot>
 </table>
 <br>
-<mat-paginator [length]="100"
-               [pageSize]="10"
-               [pageSizeOptions]="[5, 10, 25, 100]"
+<mat-paginator [length]="dataLength"
+               [pageSize]="size"
+               [pageSizeOptions]="pageOptions"
+               (page)="pageEvent= getServerData($event)"
                aria-label="Select page">
 </mat-paginator>
