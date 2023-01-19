@@ -22,4 +22,14 @@ export class ProductService {
   public findProduct(id: string):Observable<any>{
     return this.http.get('http://localhost:8000/api/v1/products/member/find/'+id);
   }
+
+  updateProduct(product: ProductDTO, id: string):Observable<any>{
+    return this.http.put('http://localhost:8000/api/v1/products/member/modify/'+id,{
+      displayName:product.displayName,
+      description:product.description,
+      unitPrice:product.unitPrice,
+      qty:product.qty,
+      sellingPrice:product.sellingPrice,
+    })
+  }
 }
