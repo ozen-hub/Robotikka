@@ -17,6 +17,7 @@ import { FindProductComponent } from './inner-items/dashboard-context/items/mana
 import { UpdateProductComponent } from './inner-items/dashboard-context/items/manage-product/update-product/update-product.component';
 import { DeleteProductComponent } from './inner-items/dashboard-context/items/manage-product/delete-product/delete-product.component';
 import { AllProductsComponent } from './inner-items/dashboard-context/items/manage-product/all-products/all-products.component';
+import {MatPaginatorModule} from "@angular/material/paginator";
 
 
 
@@ -33,13 +34,14 @@ import { AllProductsComponent } from './inner-items/dashboard-context/items/mana
     DeleteProductComponent,
     AllProductsComponent
   ],
-  imports: [
-    CommonModule,
-    ConsoleRoutingModule,
-    MatInputModule,
-    MatFormFieldModule,
-    MatButtonModule,
-    ReactiveFormsModule
-  ]
+    imports: [
+        CommonModule,
+        ConsoleRoutingModule,
+        MatInputModule,
+        MatFormFieldModule,
+        MatButtonModule,
+        ReactiveFormsModule,
+        MatPaginatorModule
+    ]
 })
 export class ConsoleModule { }
