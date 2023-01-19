@@ -9,6 +9,15 @@ import {
 import {
   FindProductComponent
 } from "./inner-items/dashboard-context/items/manage-product/find-product/find-product.component";
+import {
+  UpdateProductComponent
+} from "./inner-items/dashboard-context/items/manage-product/update-product/update-product.component";
+import {
+  DeleteProductComponent
+} from "./inner-items/dashboard-context/items/manage-product/delete-product/delete-product.component";
+import {
+  AllProductsComponent
+} from "./inner-items/dashboard-context/items/manage-product/all-products/all-products.component";
 
 const routes: Routes = [
   {
@@ -19,7 +28,10 @@ const routes: Routes = [
           {
             path: 'product', component: ManageProductComponent, children: [
               {path: 'new', component: NewProductComponent},
-              {path: 'find', component: FindProductComponent}
+              {path: 'find', component: FindProductComponent},
+              {path: 'update', component: UpdateProductComponent},
+              {path: 'delete', component: DeleteProductComponent},
+              {path: 'list', component: AllProductsComponent},
             ]
           }
         ]

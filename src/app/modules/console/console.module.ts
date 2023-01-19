@@ -14,6 +14,9 @@ import {
 } from "./inner-items/dashboard-context/items/manage-product/new-product/new-product.component";
 import {MatButtonModule} from "@angular/material/button";
 import { FindProductComponent } from './inner-items/dashboard-context/items/manage-product/find-product/find-product.component';
+import { UpdateProductComponent } from './inner-items/dashboard-context/items/manage-product/update-product/update-product.component';
+import { DeleteProductComponent } from './inner-items/dashboard-context/items/manage-product/delete-product/delete-product.component';
+import { AllProductsComponent } from './inner-items/dashboard-context/items/manage-product/all-products/all-products.component';
 
 
 
@@ -25,7 +28,10 @@ import { FindProductComponent } from './inner-items/dashboard-context/items/mana
     ManageProductComponent,
     MainConsoleHeaderComponent,
     NewProductComponent,
-    FindProductComponent
+    FindProductComponent,
+    UpdateProductComponent,
+    DeleteProductComponent,
+    AllProductsComponent
   ],
   imports: [
     CommonModule,
