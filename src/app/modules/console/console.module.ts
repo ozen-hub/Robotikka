@@ -18,6 +18,7 @@ import { UpdateProductComponent } from './inner-items/dashboard-context/items/ma
 import { DeleteProductComponent } from './inner-items/dashboard-context/items/manage-product/delete-product/delete-product.component';
 import { AllProductsComponent } from './inner-items/dashboard-context/items/manage-product/all-products/all-products.component';
 import {MatPaginatorModule} from "@angular/material/paginator";
+import {MatIconModule} from "@angular/material/icon";
 
 
 
@@ -34,14 +35,15 @@ import {MatPaginatorModule} from "@angular/material/paginator";
     DeleteProductComponent,
     AllProductsComponent
   ],
-    imports: [
-        CommonModule,
-        ConsoleRoutingModule,
-        MatInputModule,
-        MatFormFieldModule,
-        MatButtonModule,
-        ReactiveFormsModule,
-        MatPaginatorModule
-    ]
+  imports: [
+    CommonModule,
+    ConsoleRoutingModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    ReactiveFormsModule,
+    MatPaginatorModule,
+    MatIconModule
+  ]
 })
 export class ConsoleModule { }

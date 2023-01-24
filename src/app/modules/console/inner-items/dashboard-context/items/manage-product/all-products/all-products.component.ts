@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterContentChecked, AfterViewInit, ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {SnackBarService} from "../../../../../../share/services/core/snack-bar.service";
 import {ProductService} from "../../../../../../share/services/product/product.service";
 import {PageEvent} from "@angular/material/paginator";
@@ -8,8 +8,9 @@ import {PageEvent} from "@angular/material/paginator";
   templateUrl: './all-products.component.html',
   styleUrls: ['./all-products.component.scss']
 })
-export class AllProductsComponent implements OnInit {
-  pageEvent: PageEvent | undefined;
+export class AllProductsComponent implements OnInit{
+  // @ts-ignore
+  pageEvent: PageEvent;
   searchText = '';
   page = 0;
   size = 10;
@@ -31,13 +32,15 @@ export class AllProductsComponent implements OnInit {
   }
 
   private loadAllData(searchText: string, page: number, size: number) {
-    this.productService.findAll(searchText,page,size).subscribe(response=>{
+    this.productService.findAll(searchText, page, size).subscribe(response => {
       console.log(response);
-      this.data=response.data.list;
-      this.dataLength=response.data.count;
-    }, error=>{
-      this.snackbarService.showSnackbar("Something went wrong!","Close");
+      this.data = response.data.list;
+      this.dataLength = response.data.count;
+    }, error => {
+      this.snackbarService.showSnackbar("Something went wrong!", "Close");
     })
   }
+
+
 
 }

@@ -31,7 +31,7 @@ const routes: Routes = [
               {path: 'find', component: FindProductComponent},
               {path: 'update', component: UpdateProductComponent},
               {path: 'delete', component: DeleteProductComponent},
-              {path: 'list', component: AllProductsComponent},
+              {path: 'list', component: AllProductsComponent}
             ]
           }
         ]

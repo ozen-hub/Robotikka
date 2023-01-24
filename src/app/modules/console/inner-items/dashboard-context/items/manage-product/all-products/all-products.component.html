@@ -18,14 +18,11 @@
     <td>{{temp?.qty}}</td>
   </tr>
   </tbody>
-  <tfoot>
-  @developers Stack
-  </tfoot>
 </table>
 <br>
 <mat-paginator [length]="dataLength"
                [pageSize]="size"
+               [pageIndex]="page"
                [pageSizeOptions]="pageOptions"
-               (page)="pageEvent= getServerData($event)"
-               aria-label="Select page">
+               (page)="pageEvent= getServerData($event)">
 </mat-paginator>
