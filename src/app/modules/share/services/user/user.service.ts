@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {map, Observable} from "rxjs";
 import * as http from "http";
 
 @Injectable({
@@ -34,6 +34,11 @@ export class UserService {
     return this.http.post('http://localhost:8000/login',{
       username: email,
       password: password
+    },{
+      observe: 'response' as 'body'
     })
+      .pipe(map(data=>{
+        return data;
+      }))
   }
 }

@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {UserService} from "../../../share/services/user/user.service";
+import {first} from "rxjs";
+import {HttpResponse} from "@angular/common/http";
 
 @Component({
   selector: 'app-login',
@@ -23,11 +25,10 @@ export class LoginComponent implements OnInit {
   login() {
     this.userService.login(
       this.form.get('email')?.value!,
-      this.form.get('passwod')?.value!
-    ).subscribe(response => {
-      console.log(response);
-    }, error => {
-      console.log(error);
-    })
+      this.form.get('password')?.value!
+    ).pipe(first())
+      .subscribe((data: HttpResponse<any>) => {
+        console.log(data.headers.get('Authorization'));
+      })
   }
 }
