@@ -27,8 +27,11 @@ export class LoginComponent implements OnInit {
       this.form.get('email')?.value!,
       this.form.get('password')?.value!
     ).pipe(first())
-      .subscribe((data: HttpResponse<any>) => {
+      .subscribe(
+        (data: HttpResponse<any>) => {
         console.log(data.headers.get('Authorization'));
-      })
+      }, error => {
+
+        })
   }
 }
