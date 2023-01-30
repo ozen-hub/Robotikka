@@ -1,5 +1,14 @@
 <div class="main-outer">
-  <mat-icon>
+  <mat-icon (click)="sideNavState=!sideNavState">
     menu
   </mat-icon>
+</div>
+<div class="side-nav" *ngIf="sideNavState">
+
+  <div class="side-nav-top">
+    <mat-icon (click)="sideNavState=!sideNavState">
+      close
+    </mat-icon>
+  </div>
+
 </div>

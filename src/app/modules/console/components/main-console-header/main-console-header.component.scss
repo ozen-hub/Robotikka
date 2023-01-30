@@ -4,7 +4,28 @@
   align-items: center;
   background-color: var(--primary-color);
   padding: 0 13px;
-  mat-icon{
-    color: white;
-  }
+  display: flex;
+}
+.side-nav{
+  width: 280px;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  z-index: 10;
+  box-shadow: 0 5px 5px var(--primary-color);
+}
+.side-nav-top{
+  width: 100%;
+  height: 50px;
+  background-color: var(--orange-color);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 5px;
+
+}
+mat-icon{
+  color: white;
+  cursor: pointer;
 }

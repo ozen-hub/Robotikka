@@ -6,8 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-console-header.component.scss']
 })
 export class MainConsoleHeaderComponent implements OnInit {
+  sideNavState: boolean=false;
 
   constructor() { }
+
 
   ngOnInit(): void {
   }
