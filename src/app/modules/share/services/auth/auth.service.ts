@@ -10,7 +10,9 @@ export class AuthService {
   }
   createToken(key: string, token: string): void {
     this.cookieService.set(key, token, {
-      expires: 90
+      expires: 90,
+      path:'/',
+      domain:'localhost'
     });
   }
   checkCookie(key: string): boolean {
@@ -19,7 +21,7 @@ export class AuthService {
   getCookie(key: string): string {
     return this.cookieService.get(key);
   }
-  clearCookie(key:string){
-    this.cookieService.delete(key);
+  clearCookie(){
+    this.cookieService.deleteAll('/');
   }
 }

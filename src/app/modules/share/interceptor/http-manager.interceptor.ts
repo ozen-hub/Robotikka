@@ -28,7 +28,7 @@ export class HttpManagerInterceptor implements HttpInterceptor {
         console.log(err);
         if (err.status == 401 || err.status == 403) {
           alert('Unauthorized');
-          this.authService.clearCookie('robotikka');
+          this.authService.clearCookie();
           this.router.navigateByUrl('/security');
         }
         const error = err.errror.message || err.statusText;

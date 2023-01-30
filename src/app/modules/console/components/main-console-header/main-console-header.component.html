@@ -3,12 +3,14 @@
     menu
   </mat-icon>
 </div>
-<div class="side-nav" *ngIf="sideNavState">
+<div class="side-nav" *ngIf="sideNavState" [@slideInOut]>
 
   <div class="side-nav-top">
     <mat-icon (click)="sideNavState=!sideNavState">
       close
     </mat-icon>
   </div>
+
+  <button (click)="logout()">Logout</button>
 
 </div>
