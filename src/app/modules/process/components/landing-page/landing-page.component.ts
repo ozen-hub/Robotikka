@@ -32,7 +32,7 @@ export class LandingPageComponent implements OnInit {
   }
 
   private loadAllData(searchText: string, page: number, size: number) {
-    this.productService.findAll(searchText, page, size).subscribe(response => {
+    this.productService.findList(searchText, page, size).subscribe(response => {
       console.log(response);
       this.data = response.data.list;
       this.dataLength = response.data.count;

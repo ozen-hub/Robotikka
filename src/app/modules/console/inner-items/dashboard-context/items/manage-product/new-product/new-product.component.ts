@@ -34,7 +34,7 @@ export class NewProductComponent implements OnInit {
       Number.parseInt(this.form.get('qty')?.value!),
       Number.parseInt(this.form.get('sellingPrice')?.value!),
     );
-    this.productService.createProduct(data).subscribe(response => {
+    this.productService.createProduct(this.image!, data).subscribe(response => {
       if (response.code === 201) {
         this.snackbarService.showSnackbar('Success!', 'Close');
         this.refreshForm(formData);
