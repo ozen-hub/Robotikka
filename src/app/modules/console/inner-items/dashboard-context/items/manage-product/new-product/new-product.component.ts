@@ -11,7 +11,7 @@ import {SnackBarService} from "../../../../../../share/services/core/snack-bar.s
 })
 export class NewProductComponent implements OnInit {
 
-  constructor(private snackbarService:SnackBarService, private productService: ProductService) {
+  constructor(private snackbarService: SnackBarService, private productService: ProductService) {
   }
 
   form = new FormGroup({
@@ -25,7 +25,7 @@ export class NewProductComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  saveProduct(formData:FormGroupDirective) {
+  saveProduct(formData: FormGroupDirective) {
 
     let data = new ProductDTO(
       this.form.get('displayName')?.value!,
@@ -36,11 +36,11 @@ export class NewProductComponent implements OnInit {
     );
     this.productService.createProduct(data).subscribe(response => {
       if (response.code === 201) {
-        this.snackbarService.showSnackbar('Success!','Close');
+        this.snackbarService.showSnackbar('Success!', 'Close');
         this.refreshForm(formData);
       }
     }, error => {
-      this.snackbarService.showSnackbar('Something went wrong','Close');
+      this.snackbarService.showSnackbar('Something went wrong', 'Close');
     })
   }
 
@@ -48,7 +48,32 @@ export class NewProductComponent implements OnInit {
     formData.resetForm();
   }
 
-  onSelectImage($event: Event) {
-    
+
+  image: File | undefined;
+  imageUri = '';
+
+  // @ts-ignore
+  onSelectImage(event) {
+    this.image = event.target.files[0];
+    if (this.image!.size > 5e-6) {
+      alert('file is grater than 5MB');
+      return false;
+    }
+
+    if (this.image!.type !== 'image/jpg'
+      && this.image!.type !== 'image/png'
+      && this.image!.type !== 'image/jpeg'
+      && this.image!.type !== 'application/pdf'
+    ) {
+      alert('wrong file type');
+      return false;
+    }
+
+    const reader = new FileReader();
+    reader.readAsDataURL(this.image!);
+    reader.onload = () => {
+      this.imageUri = reader.result as string;
+    }
+
   }
 }
