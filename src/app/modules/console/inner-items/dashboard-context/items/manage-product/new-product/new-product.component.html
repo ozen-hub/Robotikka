@@ -33,6 +33,15 @@
             <input formControlName="sellingPrice" type="number" matInput>
           </mat-form-field>
         </div>
+        <input #imageComponent type="file" name="" id="" style="display: none"
+        accept=".jpg, .png, .jpeg, .pdf"
+        (change)="onSelectImage($event)">
+
+        <div (click)="imageComponent.click()" class="image-outer" style="width: 200px; height: 130px;
+         border: 1px solid #34495e">
+          <img src="" alt="" style="width: 100%; height: 100%">
+        </div>
+
         <div class="col-12">
           <p style="text-align: right">
             <button [disabled]="form.invalid" type="submit" mat-raised-button color="primary">Save Product</button>

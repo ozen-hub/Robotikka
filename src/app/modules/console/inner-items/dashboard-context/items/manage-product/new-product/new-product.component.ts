@@ -48,4 +48,7 @@ export class NewProductComponent implements OnInit {
     formData.resetForm();
   }
 
+  onSelectImage($event: Event) {
+    
+  }
 }
