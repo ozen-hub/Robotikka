@@ -12,7 +12,7 @@ export class ProductService {
   }
 
   public createProduct(product: ProductDTO): Observable<any> {
-    return this.http.post('http://localhost:8000/api/v1/products/member/create', {
+    return this.http.post('http://localhost:8001/api/v1/products/member/create', {
       displayName: product.displayName,
       description: product.description,
       unitPrice: product.unitPrice,
@@ -22,11 +22,11 @@ export class ProductService {
   }
 
   public findProduct(id: string): Observable<any> {
-    return this.http.get('http://localhost:8000/api/v1/products/member/find/' + id);
+    return this.http.get('http://localhost:8001/api/v1/products/member/find/' + id);
   }
 
   updateProduct(product: ProductDTO, id: string): Observable<any> {
-    return this.http.put('http://localhost:8000/api/v1/products/member/modify/' + id, {
+    return this.http.put('http://localhost:8001/api/v1/products/member/modify/' + id, {
       displayName: product.displayName,
       description: product.description,
       unitPrice: product.unitPrice,
@@ -36,10 +36,10 @@ export class ProductService {
   }
 
   deleteProduct(id: string): Observable<any> {
-    return this.http.delete('http://localhost:8000/api/v1/products/member/remove/' + id);
+    return this.http.delete('http://localhost:8001/api/v1/products/member/remove/' + id);
   }
 
   findAll(searchText: string, page: number, size: number):Observable<any> {
-    return this.http.get('http://localhost:8000/api/v1/products/member/list?searchText=' + searchText+'&page='+page+'&size='+size);
+    return this.http.get('http://localhost:8001/api/v1/products/member/list?searchText=' + searchText+'&page='+page+'&size='+size);
   }
 }

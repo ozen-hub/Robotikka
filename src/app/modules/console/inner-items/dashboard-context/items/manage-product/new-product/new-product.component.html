@@ -39,7 +39,7 @@
 
         <div (click)="imageComponent.click()" class="image-outer" style="width: 200px; height: 130px;
          border: 1px solid #34495e">
-          <img src="" alt="" style="width: 100%; height: 100%">
+          <img *ngIf="imageUri" src="{{imageUri}}" alt="" style="width: 100%; height: 100%">
         </div>
 
         <div class="col-12">

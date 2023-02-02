@@ -55,7 +55,7 @@ export class NewProductComponent implements OnInit {
   // @ts-ignore
   onSelectImage(event) {
     this.image = event.target.files[0];
-    if (this.image!.size > 5e-6) {
+    if (this.image!.size > 4e+7) {
       alert('file is grater than 5MB');
       return false;
     }

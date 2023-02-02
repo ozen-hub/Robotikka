@@ -13,7 +13,7 @@ export class UserService {
 
   public register(firstName: string, lastName: string, contact: string,
                   email: string, password: string): Observable<any> {
-    return this.http.post('http://localhost:8000/api/v1/users/visitor/register', {
+    return this.http.post('http://localhost:8001/api/v1/users/visitor/register', {
       firstName: firstName,
       lastName: lastName,
       contact: contact,
@@ -25,13 +25,13 @@ export class UserService {
   }
 
   public verify(code: string, email: string): Observable<any> {
-    return this.http.post('http://localhost:8000/api/v1/users/visitor/verify/' + code + '?email=' + email, {})
+    return this.http.post('http://localhost:8001/api/v1/users/visitor/verify/' + code + '?email=' + email, {})
 
 
   }
 
   login(email: string, password: string):Observable<any> {
-    return this.http.post('http://localhost:8000/login',{
+    return this.http.post('http://localhost:8001/login',{
       username: email,
       password: password
     },{
